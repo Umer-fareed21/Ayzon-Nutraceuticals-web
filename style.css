@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.header {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bg-slider {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* slides container */
+.slides {
+    display: flex;
+    height: 100%;
+    transition: transform 1.2s ease-in-out;
+    z-index: 1;
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* overlay */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: #fff;
+    font-size: 30px;
+    padding: 10px 15px;
+    cursor: pointer;    
+}
+
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/* dots */
+.dots {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 5;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #fff;
+}
+
+/* nav */
+nav {
+    position: relative;
+    z-index: 10;
+}
+
+
+
+
+
+/* nav-1 */
+
+nav .nav-1 {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #bdbdbd;
+    height: 38px;
+}
+
+.nav-1-1 {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 1px solid #bdbdbd;
+    border-top: none;
+    border-bottom: none;
+}
+
+.nav-1-1 svg {
+    width: 12px;
+    fill: #073b3a;
+}
+
+.nav-1-1 p {
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #073b3a;
+    transition: 100ms;
+}
+
+.nav-1-1 a {
+    text-decoration: none;
+}
+
+.nav-1-1 a p:hover {
+    color: #019c4e;
+}
+
+.nav-1-2 {
+    display: flex;
+    gap: 20px;
+    padding: 10px 20px;
+    border: 1px solid #bdbdbd;
+    border-top: none;
+    border-bottom: none;
+}
+
+.nav-1-2 svg {
+    width: 16px;
+}
+
+.nav-1-2 svg:hover {
+    fill: #019c4e;
+}
+
+
+/* nav-2 */
+
+.nav-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.nav-2-2 ul {
+    display: flex;
+    gap: 30px;
+    list-style-type: none;
+}
+
+.nav-2-2 ul li a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #073b3a;
+    transition: 150ms;
+}
+
+.nav-2-2 ul li a:hover {
+    color: #019c4e;
+}
+
+/* Dropdown parent */
+.nav-2-2 ul li.dropdown {
+    position: relative;
+}
+
+/* Arrow next to Products */
+.nav-2-2 ul li.dropdown > a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Rotate arrow on hover */
+.nav-2-2 ul li.dropdown:hover > a .arrow {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+/* Dropdown menu */
+.nav-2-2 ul li.dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+/* Show menu on hover */
+.nav-2-2 ul li.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* dropdown links style */
+.nav-2-2 ul li.dropdown .dropdown-menu li a {
+    padding: 12px 20px;
+    display: block;
+    color: #073b3a;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.nav-2-2 ul li.dropdown .dropdown-menu li a:hover {
+    background: #019c4e;
+    color: #fff;
+    border-radius: 4px;
+}
+
+
+
+
+/* main */
+
+.section-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 40px;
+}
+
+.sec-1-1 {
+    max-width: 45%;
+}
+
+.sec-1-1 h4 {
+    color: #00aa51;
+    font-size: 18px;
+}
+
+.sec-1-1 h1 {
+    color: #1a4f4e;
+    font-size: 35px;
+    line-height: 40px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.sec-1-1 p {
+    margin-top: 20px;
+    color: #887e7a;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.sec-1-1 a {
+    text-decoration: none;
+    color: #00aa51;
+    font-weight: 600;
+}
