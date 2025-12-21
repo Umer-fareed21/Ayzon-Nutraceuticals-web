@@ -1,4 +1,3 @@
-
 const slides = document.querySelector(".slides");
 const slideEls = document.querySelectorAll(".slide");
 const dotsContainer = document.querySelector(".dots");

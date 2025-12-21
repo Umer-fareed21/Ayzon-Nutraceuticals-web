@@ -56,7 +56,7 @@ body {
     color: #fff;
     font-size: 30px;
     padding: 10px 15px;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
 .prev {
@@ -190,14 +190,14 @@ nav .nav-1 {
 }
 
 /* Arrow next to Products */
-.nav-2-2 ul li.dropdown > a {
+.nav-2-2 ul li.dropdown>a {
     display: flex;
     align-items: center;
     gap: 5px;
 }
 
 /* Rotate arrow on hover */
-.nav-2-2 ul li.dropdown:hover > a .arrow {
+.nav-2-2 ul li.dropdown:hover>a .arrow {
     transform: rotate(180deg);
     transition: transform 0.3s ease;
 }
@@ -205,15 +205,15 @@ nav .nav-1 {
 /* Dropdown menu */
 .nav-2-2 ul li.dropdown .dropdown-menu {
     position: absolute;
-    top: 100%; 
+    top: 100%;
     left: 0;
     background: #fff;
     display: flex;
     flex-direction: column;
     min-width: 180px;
     border-radius: 6px;
-    border: 1px solid rgba(0,0,0,0.1);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -284,4 +284,8 @@ nav .nav-1 {
     text-decoration: none;
     color: #00aa51;
     font-weight: 600;
+}
+
+.box-1 {
+    max-width: 300px;
 }
