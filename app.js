@@ -65,3 +65,80 @@ sliderWrapper.addEventListener("mouseleave", startAuto);
 
 startAuto();
 
+
+
+// product change filter
+
+const filterLinks = document.querySelectorAll(".sec-3-2 a");
+const products = document.querySelectorAll(".sec-3-3-1");
+const loader = document.querySelector(".product-loader");
+
+filterLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // active tab
+        filterLinks.forEach(l => l.classList.remove("active"));
+        this.classList.add("active");
+
+        const filter = this.dataset.filter;
+
+        // hide products & show loader
+        document.querySelector(".sec-3-3").style.display = "none";
+        loader.style.display = "flex";
+
+        setTimeout(() => {
+            loader.style.display = "none";
+            document.querySelector(".sec-3-3").style.display = "flex";
+
+            products.forEach(product => {
+                if (filter === "all") {
+                    product.style.display = "block";
+                } else {
+                    product.style.display =
+                        product.dataset.category === filter ? "block" : "none";
+                }
+            });
+        }, 500); // loader duration
+    });
+});
+
+
+
+
+
+// scroll auto counter
+
+const counters = document.querySelectorAll(".counter");
+let counterStarted = false;
+
+function startCounting() {
+    counters.forEach(counter => {
+        const target = +counter.getAttribute("data-target");
+        let current = 0;
+        const increment = Math.ceil(target / 80);
+
+        const updateCounter = () => {
+            if (current < target) {
+                current += increment;
+                counter.innerText = current + "+";
+                setTimeout(updateCounter, 20);
+            } else {
+                counter.innerText = target + "+";
+            }
+        };
+
+        updateCounter();
+    });
+}
+
+window.addEventListener("scroll", () => {
+    const section = document.querySelector(".section-4");
+    const sectionTop = section.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (sectionTop < windowHeight - 100 && !counterStarted) {
+        counterStarted = true;
+        startCounting();
+    }
+});
