@@ -814,10 +814,16 @@ footer {
     padding: 10px 20px;
     cursor: pointer;
     color: #073b3a;
+    display: none;
 }
 
 /* mobile menu slide from right */
 @media screen and (max-width: 768px) {
+
+    .nav-2-2 ul.menu li.close-btn {
+        display: block;
+    }
+
     .burger {
         display: flex;
     }
