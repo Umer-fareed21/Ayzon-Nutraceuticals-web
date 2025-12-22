@@ -142,3 +142,36 @@ window.addEventListener("scroll", () => {
         startCounting();
     }
 });
+
+
+
+
+
+
+
+// burger menu
+
+const burger = document.querySelector('.burger');
+const navMenu = document.querySelector('.nav-2-2');
+const closeBtn = document.querySelector('.nav-2-2 ul.menu li.close-btn');
+
+burger.addEventListener('click', () => {
+    navMenu.classList.add('active'); // menu open
+});
+
+closeBtn.addEventListener('click', () => {
+    navMenu.classList.remove('active'); // menu close
+});
+
+// dropdown toggle for mobile
+const dropdowns = document.querySelectorAll('.nav-2-2 ul.menu li.dropdown > a');
+
+dropdowns.forEach(drop => {
+    drop.addEventListener('click', (e) => {
+        e.preventDefault(); 
+        const parent = drop.parentElement;
+        parent.classList.toggle('open');
+    });
+});
+
+
