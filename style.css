@@ -186,6 +186,7 @@ nav .nav-1 {
     display: flex;
     gap: 30px;
     list-style-type: none;
+    align-items: center;
 }
 
 .nav-2-2 ul li a {
